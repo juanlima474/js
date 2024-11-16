@@ -1,102 +1,124 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(180deg, rgba(255,0,31,1) 44%, rgba(255,0,112,1) 60%);
+    background: linear-gradient(180deg, rgba(255, 0, 31, 1) 44%, rgba(255, 0, 112, 1) 60%);
 }
 
-.container{
+.container {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Alinha os itens verticalmente em telas menores */
+    padding: 1rem;
 }
 
-.content1{
+.content1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 300px;
-    height: 100px;
+    width: 100%; /* Ajusta largura total no celular */
+    max-width: 320px; /* Define limite para desktops */
+    margin-bottom: 1rem; /* Adiciona espaçamento entre botões e outras seções */
 }
 
-.content1 .no{
+.content1 .no, .content1 .yes {
     height: 50px;
-    width: 75px;
+    width: 100px; /* Botões maiores para telas menores */
     border-radius: 8px;
     border: 2px solid #FFF;
     background-color: red;
     color: #FFF;
-    font-size: 18px;
+    font-size: 16px; /* Reduz fonte para melhor ajuste */
     font-weight: bolder;
-}
-
-.content1 .yes{    
-    height: 50px;
-    width: 75px;
-    border-radius: 8px;
-    border: 2px solid #FFF;
-    background-color: red;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: bolder;
+    text-align: center;
+    line-height: 50px; /* Centraliza o texto verticalmente */
     cursor: pointer;
-    transition: ease .5s;
-}   
+    transition: ease 0.5s;
+}
 
-.yes:hover{
+.yes:hover {
     background-color: rgb(249, 84, 84);
 }
 
-span{
+span {
     font-weight: bolder;
     font-size: 18px;
-    color:#FFF;
+    color: #FFF;
+    text-align: center; /* Centraliza texto no celular */
 }
 
-.title1{
-    font-size: 1.5rem;
+.title1 {
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:3%;
+    top: 3%;
     width: 100%;
+    text-align: center; /* Ajusta o título ao centro */
+    padding: 0 1rem; /* Espaçamento lateral */
 }
 
-.title1 h1{
+.title1 h1 {
+    color: #FFF;
+    font-size: 1.5rem; /* Fonte ajustada para dispositivos menores */
+}
+
+.content2 {
+    display: none;
+    text-align: center; /* Centraliza imagem */
+}
+
+.content2 img {
+    height: auto;
+    max-width: 100%; /* Ajusta tamanho da imagem para telas pequenas */
+}
+
+footer {
+    position: absolute;
+    bottom: 5%;
+    font-size: 12px;
+    color: #FFF;
+    text-align: center; /* Centraliza o texto do rodapé */
+    width: 100%;
+    padding: 0 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
     color: #FFF;
 }
 
-.content2{
-    display: none;
-}
-
-.content2 img{
-    height: 300px;
-    width: 320px;
-}
-
-footer{
-    position: absolute;
-    bottom: 5%;
-    font-size: 13px;
-    color:#FFF;
-}
-
-footer a{
-    text-decoration: none;
-    font-weight: bold;
-    color:#FFF;
-}
-
-footer i{
+footer i {
     color: rgb(30, 0, 139);
+}
+
+/* Media Query para Dispositivos Menores */
+@media (max-width: 768px) {
+    .content1 {
+        flex-direction: column; /* Alinha botões em coluna */
+        gap: 1rem; /* Espaçamento entre os botões */
+    }
+
+    .content1 .no, .content1 .yes {
+        width: 80%; /* Botões ocupam mais espaço em telas pequenas */
+    }
+
+    .title1 h1 {
+        font-size: 1.3rem; /* Ajusta tamanho da fonte */
+    }
+
+    footer {
+        font-size: 10px; /* Fonte menor para ajustar em telas menores */
+    }
 }
